@@ -27,7 +27,7 @@
 				<input class="btn btn-lg btn-primary btn-block" type="button"
 					id="loginBtn" value="Login" onclick="checkValue()">
 					
-				<a href="/view/user/signin">회원가입</a>
+				
 			</form>
 		</div>
 	</div>

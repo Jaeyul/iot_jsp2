@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+
+
+
+
+span.pen{ 
+   position:relative;
+   display:inline-block;
+   animation: drop 0.75s;
+}
+
+@keyframes drop {
+   0% { 
+      transform: translateY(-100px);
+      opacity: 0;
+   }
+   
+   90% {
+      opacity: 1;
+      transform:translateY(10px);
+   }
+   100% {
+      transform:translateY(0px;)
+   }
+}

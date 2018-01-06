@@ -76,7 +76,7 @@ function signin(){
 			var obj = JSON.parse(res);
 			alert(obj.msg);
 			if(obj.result=="ok"){
-				location.href="/view/user/login";
+				location.href="<%=rootPath%>/";
 			}
 		},
 		error:function(xhr,status,error){
