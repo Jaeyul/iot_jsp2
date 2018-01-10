@@ -1,0 +1,57 @@
+<%@page import="com.iot.test.vo.UserClass"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+<%
+String rootPath = request.getContextPath();
+UserClass user = (UserClass)session.getAttribute("user");
+String loginMenu = "Login";
+String loginUrl = rootPath + "/view/user/login";
+if(user!=null){
+	loginMenu = "Logout";
+	loginUrl = rootPath + "/user/logout";
+}
+
+String uri = request.getRequestURI();
+int idx = uri.lastIndexOf(".");
+if(idx!=-1){
+	uri.substring(8, idx-1);
+}
+%>
+
+<script>
+//$(documnet).ready(function(){
+// $("a [href='<%=uri%>']").parent().attr("class", "active");	
+//}); 
+</script>
+
+
+
+
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="#home" class="w3-bar-item w3-button"><b>Cl</b>over</a>
+    <a href="<%=rootPath%>/" class="w3-bar-item w3-button " id='Home'>Home</a>  
+    
+    <div class="w3-dropdown-hover w3-hide-small">
+    <button class="w3-bar-item w3-button" title="Notifications">List<span class="w3-badge w3-right w3-small w3-green">2</span></button>     
+    <div class="w3-dropdown-content w3-card-4 w3-bar-block" >
+      <a href="<%=rootPath%>/view/user/list" class="w3-bar-item w3-button" id='UserList'>UserList</a>
+      <a href="<%=rootPath%>/view/class/list" class="w3-bar-item w3-button" id='ClassList'>ClassList</a>      
+    </div>
+   </div> 
+       
+   <div class="w3-right w3-hide-small">
+     <a href="<%=loginUrl%>" class="w3-bar-item w3-button" id="log" ><%=loginMenu%></a>
+     <a href="<%=rootPath%>/view/user/signin" class="w3-bar-item w3-button"><span class="glyphicon glyphicon-user"></span>Sign up</a>
+   </div>   
+  </div>
+</div>    
+
+
+
+
+    
+
+
+

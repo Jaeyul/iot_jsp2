@@ -7,14 +7,15 @@
 <title>Login</title>
 </head>
 <link rel="stylesheet" href="<%=rootPath%>/ui/css/sign.css" />
-<body>
-	<jsp:include page="/WEB-INF/view/common/header.jsp" flush="false" />
+<body class="moon">
+	<jsp:include page="/WEB-INF/view/common/header.jspf" flush="false" />
+		
 	<div class="result_div"></div>
-	<div class="container">
+	<div class="container" style="margin-top : 150px">
 		<div class="starter-template">
 		
-			<form class="form-signin">
-				<h2 id="hText2" class="form-signin-heading">로그인</h2>
+			<form class="form-login">
+				<h2 id="hText2" class="form-signin-heading" style="color : white">Login</h2>
 				
 				<label for="userId" class="sr-only">ID</label> 
 				<input type="text" id="userId" name="userId" class="form-control"
@@ -22,12 +23,11 @@
 					
 				<label for="userPwd" class="sr-only">Password</label> 
 				<input type="password" id="userPwd" name="userPwd" class="form-control"
-					placeholder="Password">
-					
-				<input class="btn btn-lg btn-primary btn-block" type="button"
-					id="loginBtn" value="Login" onclick="checkValue()">
-					
-				
+					placeholder="Password">	
+				<input type="checkbox" id="saveId" style="margin-top : 10px"><span style="color : white">아이디저장</span>							
+				<a href="#" id="button" onclick="checkValue()">
+    				<span>Sign in</span>
+				</a>				
 			</form>
 		</div>
 	</div>
@@ -35,9 +35,10 @@
 <script>
 
 function checkValue(){
-	var objs = $(".container");
+	
 	var userId = $("#userId").val().trim();
 	var userPwd = $("#userPwd").val().trim();
+	var saveId = $("#saveId").prop("checked");	
 	if(userId.length<3){
 		alert("유저아이디 확인해!!");
 		$("#userId").focus();
@@ -48,8 +49,7 @@ function checkValue(){
 		$("#userPwd").focus();
 		return;
 	}
-	var param = {uiId:userId, uiPwd:userPwd};
-	
+	var param = {uiId:userId, uiPwd:userPwd, isSaveId:saveId};	
 	param = "param=" + encodeURIComponent(JSON.stringify(param));
 	$.ajax({
 		url : '<%=rootPath%>/user/login',
@@ -64,5 +64,35 @@ function checkValue(){
 		}
 	})
 }
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+$(document).ready(function(){
+   var userId = getCookie("userId");
+   var saveId = getCookie("saveId");
+   if(userId){
+      $("#userId").val(userId);
+      $("#saveId").prop("checked",true);
+   }
+});
+
+
+
+
+
 </script>
 </html>

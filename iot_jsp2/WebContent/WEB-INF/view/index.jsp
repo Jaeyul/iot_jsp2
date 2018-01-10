@@ -10,18 +10,32 @@ if(user==null){
 <title>IOT_TEST</title>
 </head>
 
-<body>
-	<jsp:include page="/WEB-INF/view/common/header.jsp" flush="false" />
-	
-    <div class="container">
+<body class="moon" onload="myFunction()">
+	<jsp:include page="/WEB-INF/view/common/header.jspf" flush="false" />
+	<div class="container" style="border-color : white">
 	 
-      <div class="star" style= "color: white"  >
-        <h1><span class="pen"><%=user.getUiName()%></span>님 환영합니다.</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-      </div>
- 
-    </div><!-- /.container -->
+      <div class="star" style= "color: white">       
+        <h1 class="h1bt">We welcome to <span class="pen"><%=user.getUiName()%></span></h1>        
+        <p><h2>The secret to creativity is knowing</h2></p>
+        <p><h2> how to hide your source.</h2></p>           
+        <p id="demo"></p> 
+		<p class="lead"><br></p>      
+      </div>            
+      
+	  
+        
+</div><!-- /.container -->      
 </body>
+<script>
+function myFunction() {
+    var d = new Date();
+    var n = d.toLocaleTimeString();
+    document.getElementById("demo").innerHTML = n;
+    
+    setTimeout(myFunction, 1000);
+}
+</script>
+
 </html>
 <%
 }

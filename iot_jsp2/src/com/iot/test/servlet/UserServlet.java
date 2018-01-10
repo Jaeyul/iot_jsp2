@@ -47,18 +47,16 @@ public class UserServlet extends HttpServlet {
 	}
 
 	public void doProcess(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		req.setCharacterEncoding("utf-8");
-		res.setCharacterEncoding("utf-8");
-		res.setContentType("text/html;charset=utf-8");
+		
 		PrintWriter out = res.getWriter();
 		String uri = req.getRequestURI();
-		System.out.println(uri + "zz");
+		
 		//StringBuffer url = req.getRequestURL();
 		String cmd = getCommand(uri);
-		System.out.println(cmd + "kk");
+		
 		//System.out.println(uri);
 		if (cmd.equals("login")) {
-			HashMap<String, Object> hm = us.login(req);			
+			HashMap<String, Object> hm = us.login(req, res);			
 			out.println(gs.toJson(hm));
 		}else if(cmd.equals("logout")) {
 			us.logout(req);
@@ -77,6 +75,12 @@ public class UserServlet extends HttpServlet {
 			rm.put("ul", userList);
 			rm.put("cl", classList);
 			out.println(gs.toJson(rm));
+			
+		}else if(cmd.equals("delete")) {
+			out.println(us.deleteUser(req));			
+		}else if(cmd.equals("update")) {
+			out.println(us.updateUser(req));
+			
 			
 		}
 
