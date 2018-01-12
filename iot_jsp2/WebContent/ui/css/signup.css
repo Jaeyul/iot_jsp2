@@ -49,8 +49,7 @@ h1 {
   font-size: 28px;
 }
 
-input[type="text"],
-input[type="password"] {
+.forsingup {
   display: block;
   box-sizing: border-box;
   margin-bottom: 20px;

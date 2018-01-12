@@ -5,9 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
-<link rel="stylesheet" href="<%=rootPath%>/ui/css/sign.css" />
-<link rel="stylesheet" href="<%=rootPath%>/ui/css/signup.css" />
-<link rel="stylesheet" href="<%=rootPath%>/ui/css/select.css" />
+
 
 <jsp:include page="/WEB-INF/view/common/header.jspf" flush="false" />
 <body class="moon">
@@ -16,14 +14,14 @@
   <div class="left">
     <h1>Sign up</h1>
     
-    <input type="text" id="uiName" name="uiName" placeholder="이름" />
-    <input type="text" id="uiAge" name="uiAge" placeholder="나이" />
-    <input type="text" id="uiId" name="uiId" placeholder="ID" />
-    <input type="password" id="uiPwd" name="uiPwd" placeholder="Password" />    
-    <select class="cussel" name="ciNo" id="ciNo" >
+    <input class="forsingup" type="text" id="uiName" name="uiName" placeholder="이름" />
+    <input class="forsingup" type="text" id="uiAge" name="uiAge" placeholder="나이" />
+    <input class="forsingup" type="text" id="uiId" name="uiId" placeholder="ID" />
+    <input class="forsingup" type="password" id="uiPwd" name="uiPwd" placeholder="Password" />    
+    <select class="cussel forsingup" name="ciNo" id="ciNo" >
 	</select>	
-	<input type="text" id="address" name="address" placeholder="주소" />    
-    <input type="button" class="butbut" name="signup_submit" value="Sign me up" onclick="signin()" />
+	<input class="forsingup" type="text" id="address" name="address" placeholder="주소" />    
+    <input class="forsingup" type="button" class="butbut" name="signup_submit" value="Sign me up" onclick="signin()" />
   </div>
  <div class="right">
     <span class="loginwith"><br/></span>

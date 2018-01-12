@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Login</title>
 </head>
-<link rel="stylesheet" href="<%=rootPath%>/ui/css/sign.css" />
+
 <body class="moon">
 	<jsp:include page="/WEB-INF/view/common/header.jspf" flush="false" />
 		

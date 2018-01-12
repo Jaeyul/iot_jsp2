@@ -12,8 +12,11 @@
   <div class="left">
     <h1>Class Open</h1>
     
-    <input type="text" id="ciName" name="ciName" placeholder="반이름" />
-    <input type="text" id="ciDesc" name="ciDesc" placeholder="상세정보" /> 
+    <br>
+    <br>
+    <br>
+    <input class="forsingup" type="text" id="ciName" name="ciName" placeholder="반이름" />
+    <input class="forsingup" type="text" id="ciDesc" name="ciDesc" placeholder="상세정보" /> 
     <input type="button" class="butbut" name="signup_submit" value="Open" onclick="insertClass()" />  
   </div>
   

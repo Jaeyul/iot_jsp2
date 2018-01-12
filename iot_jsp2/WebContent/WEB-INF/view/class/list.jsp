@@ -6,8 +6,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
-<link rel="stylesheet" href="<%=rootPath%>/ui/css/list.css" />
-<link rel="stylesheet" href="<%=rootPath%>/ui/css/table.css" />
 
 <style>
 #posi {
@@ -15,12 +13,7 @@
     left: 45%;
     
 }
-
-
 </style>
-
-
-
 <body   class="moon">
 <jsp:include page="/WEB-INF/view/common/header.jspf" flush="false" />
 	<br>

@@ -49,11 +49,9 @@ public class UserServlet extends HttpServlet {
 	public void doProcess(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		
 		PrintWriter out = res.getWriter();
-		String uri = req.getRequestURI();
-		
+		String uri = req.getRequestURI();		
 		//StringBuffer url = req.getRequestURL();
-		String cmd = getCommand(uri);
-		
+		String cmd = getCommand(uri);		
 		//System.out.println(uri);
 		if (cmd.equals("login")) {
 			HashMap<String, Object> hm = us.login(req, res);			
@@ -67,20 +65,17 @@ public class UserServlet extends HttpServlet {
 			out.println(req.getAttribute("resStr"));
 //			System.out.println(uc);
 //			out.println(gs.toJson(uc));
-		}else if(cmd.equals("list")) {
-			
+		}else if(cmd.equals("list")) {			
 			ArrayList<UserClass> userList = us.getUserList();
 			List<ClassInfo> classList = cs.getClassList();
 			HashMap<String, List> rm = new HashMap<String, List>();
 			rm.put("ul", userList);
 			rm.put("cl", classList);
-			out.println(gs.toJson(rm));
-			
+			out.println(gs.toJson(rm));			
 		}else if(cmd.equals("delete")) {
 			out.println(us.deleteUser(req));			
 		}else if(cmd.equals("update")) {
-			out.println(us.updateUser(req));
-			
+			out.println(us.updateUser(req));			
 			
 		}
 

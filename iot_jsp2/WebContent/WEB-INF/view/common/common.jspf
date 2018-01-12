@@ -18,6 +18,13 @@ if(uri.indexOf("login")==-1 && uri.indexOf("signin")==-1 && user==null){
 <link rel="stylesheet" href="<%=rootPath%>/ui/css/forbody.css">
 <link rel="stylesheet" href="<%=rootPath%>/ui/css/drop.css">
 <link rel="stylesheet" href="<%=rootPath%>/ui/css/button.css">
+<link rel="stylesheet" href="<%=rootPath%>/ui/css/list.css" />
+<link rel="stylesheet" href="<%=rootPath%>/ui/css/table.css" />
+<link rel="stylesheet" href="<%=rootPath%>/ui/css/sign.css" />
+<link rel="stylesheet" href="<%=rootPath%>/ui/css/signup.css" />
+<link rel="stylesheet" href="<%=rootPath%>/ui/css/select.css" />
+
+
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 

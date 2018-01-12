@@ -13,40 +13,45 @@ if(user!=null){
 }
 
 String uri = request.getRequestURI();
+
 int idx = uri.lastIndexOf(".");
 if(idx!=-1){
-	uri.substring(8, idx-1);
+	uri = uri.substring(8, idx);
 }
 %>
 
+
 <script>
-//$(documnet).ready(function(){
-// $("a [href='<%=uri%>']").parent().attr("class", "active");	
-//}); 
+$(document).ready(		
+		function(){			
+			$("ul li a[href='<%=uri%>']").parent().attr("class", "active");	
+		}
+);
 </script>
 
+ <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">          
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="<%=rootPath%>/">Home</a></li>    
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">LISTs<span class="caret"></span></a>
+             <ul class="dropdown-menu">
+              <li><a href="<%=rootPath%>/view/user/list" id='UserList'>UserList</a></li>
+              <li><a href="<%=rootPath%>/view/class/list" id='ClassList'>ClassList</a></li>      
+             </ul>  
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+     	   <li><a href="<%=rootPath%><%=loginUrl%>" class="w3-bar-item w3-button"><span class="glyphicon glyphicon-log-in" id="log"></span> <%=loginMenu%></a></li>
+           <li><a href="<%=rootPath%>/view/user/signin"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+ </nav>
 
 
-
-<div class="w3-top">
-  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-    <a href="#home" class="w3-bar-item w3-button"><b>Cl</b>over</a>
-    <a href="<%=rootPath%>/" class="w3-bar-item w3-button " id='Home'>Home</a>  
-    
-    <div class="w3-dropdown-hover w3-hide-small">
-    <button class="w3-bar-item w3-button" title="Notifications">List<span class="w3-badge w3-right w3-small w3-green">2</span></button>     
-    <div class="w3-dropdown-content w3-card-4 w3-bar-block" >
-      <a href="<%=rootPath%>/view/user/list" class="w3-bar-item w3-button" id='UserList'>UserList</a>
-      <a href="<%=rootPath%>/view/class/list" class="w3-bar-item w3-button" id='ClassList'>ClassList</a>      
-    </div>
-   </div> 
-       
-   <div class="w3-right w3-hide-small">
-     <a href="<%=loginUrl%>" class="w3-bar-item w3-button" id="log" ><%=loginMenu%></a>
-     <a href="<%=rootPath%>/view/user/signin" class="w3-bar-item w3-button"><span class="glyphicon glyphicon-user"></span>Sign up</a>
-   </div>   
-  </div>
-</div>    
 
 
 

@@ -5,8 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
-<link rel="stylesheet" href="<%=rootPath%>/ui/css/list.css" />
-<link rel="stylesheet" href="<%=rootPath%>/ui/css/table.css" />
+
 <body style="background :url('http://img.insight.co.kr/upload/2015/12/26/ART151226123327R9HE3H2B.jpg'); background-size: cover" >
 	<jsp:include page="/WEB-INF/view/common/header.jspf" flush="false" />
 	<br>
@@ -31,31 +30,17 @@
 	
 	
 	<div style="margin-top : 10px; margin-left : 80%">
-	<input type="text" id="search" ><a class='btn btn-danger' onclick='searchUser()'><em class='glyphicon glyphicon-search'></em></a>
+	<input type="text"><a class='btn btn-danger' onclick='searchUser()'><em class='glyphicon glyphicon-search'></em></a>
 	</div>
+	
+	
+	
 	
 	
 </body>
 <script>
-//var colsInfo = new Array();  아래의 []와 동일하다.
 
-function searchUser() {
-  var input, filter, table, tr, td, i;
-  input = document.getElementById("search");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("grid1");
-  tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[1];
-    if (td) {
-      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }       
-  }
-}
+
 
 
 
@@ -121,7 +106,7 @@ function updateUser(uiNo){
 		})	
 }
 
-
+//var colsInfo = new Array();  아래의 []와 동일하다.
 var colsInfo = [];
 
 $(document).ready(function(){
