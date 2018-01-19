@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -49,7 +51,7 @@ function checkValue(){
 		$("#userPwd").focus();
 		return;
 	}
-	var param = {uiId:userId, uiPwd:userPwd, isSaveId:saveId};	
+	var param = {uiId:userId, uiPwd:userPwd, isSaveId:saveId};
 	param = "param=" + encodeURIComponent(JSON.stringify(param));
 	$.ajax({
 		url : '<%=rootPath%>/user/login',

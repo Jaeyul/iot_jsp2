@@ -41,6 +41,7 @@ $(document).ready(
              <ul class="dropdown-menu">
               <li><a href="<%=rootPath%>/view/user/list" id='UserList'>UserList</a></li>
               <li><a href="<%=rootPath%>/view/class/list" id='ClassList'>ClassList</a></li>      
+                    
              </ul>  
           </ul>
           <ul class="nav navbar-nav navbar-right">
